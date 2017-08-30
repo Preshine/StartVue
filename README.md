@@ -1,2 +1,0 @@
-# StartVue
-just for fun
