@@ -28,10 +28,12 @@
 
             </form>
         </div>
+        <hello ref="hello" ></hello>
     </div>
 </template>
 
 <script>
+import hello from '../../Hello'
 export default {
     name: 'login',
     data() {
@@ -40,9 +42,14 @@ export default {
         }
     },
     methods: {
-        login() {
-            console.log('logined...');
+        login(username) {
+            console.log(username);
+            debugger;
+            this.$refs.hello.show();
         }
+    },
+    components: {
+        hello
     }
 }
 </script>
