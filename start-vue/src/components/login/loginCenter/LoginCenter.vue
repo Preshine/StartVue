@@ -1,5 +1,5 @@
 <template>
-    <div class="login">
+    <div class="login" v-show="showLogin" >
         <img src="./LoginCenterBg.jpg" class="login-background">
         <div class="login-form-wrapper">
             <form class="main-form login-form" method="post">
@@ -28,28 +28,25 @@
 
             </form>
         </div>
-        <hello ref="hello" ></hello>
     </div>
 </template>
 
 <script>
-import hello from '../../Hello'
 export default {
     name: 'login',
     data() {
         return {
-            msg: 'Welcome to Your Vue.js App'
+            msg: 'Welcome to Your Vue.js App',
+            showLogin: true
         }
     },
     methods: {
         login(username) {
             console.log(username);
-            debugger;
-            this.$refs.hello.show();
+            this.$data.showLogin = false;
+            this.$router.push('Hello');
+            // this.$refs.hello.show();
         }
-    },
-    components: {
-        hello
     }
 }
 </script>
